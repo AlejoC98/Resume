@@ -1,0 +1,78 @@
+// Importing Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+// Variable
+$primary-color: #787d80;
+$grey-bg: #efefef;
+$icon-color: #464646;
+$line-color: #333;
+$right-side-text-color: #686c6e;
+$font: 'Roboto', sans-serif;
+
+// Imports
+@import 'header';
+@import 'cont-items';
+
+// Setting default attributes to 0
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $font;
+}
+
+// Mixin for side background color
+@mixin panel-theme($bg) {
+    background: $bg;
+    padding: 30px 50px;
+}
+
+// Mixin for titles color and letter spacing
+@mixin sec-title($color, $l-space) {
+    color: $color;
+    letter-spacing: $l-space;
+}
+
+// setting the height to the screen size
+.content {
+    height: 100vh;
+    display: inline-flex;
+}
+
+// Creating he titles
+.content h3 {
+    @include sec-title($primary-color, .5rem);
+}
+
+// this line to decorate every title
+.divider {
+    border: 0;
+    border-top: 5px solid $line-color;
+    width: 70px;
+    margin: 0;
+}
+
+// Setting left side wiht by default
+.left-side {
+    @include panel-theme(#ffffff);
+    width: 300px;
+}
+
+// Setting bg, color, paddings and margins for the right side.
+.right-side {
+    @include panel-theme($grey-bg);
+
+    span, li {
+        color: $right-side-text-color;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+}
+
+.expe-cont {
+    p {
+        margin-bottom: 2px;
+    }
+}
